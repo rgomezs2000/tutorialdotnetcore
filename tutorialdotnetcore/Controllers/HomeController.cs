@@ -8,7 +8,25 @@ namespace tutorialdotnetcore.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["mensaje"] = "Hola Mundo!";
             return View();
+        }
+
+        public IActionResult Saludos()
+        {
+            ViewData["saludo"] = "Hola a Todos";
+            return View();
+        }
+
+        public IActionResult Perfil()
+        {
+            var miUsuario = new Usuario
+            {
+                Nombre = "Roger Gomez",
+                Correo = "rogergomezs2003@gmail.com"
+            };
+
+            return View(miUsuario);
         }
 
         public IActionResult Privacy()
